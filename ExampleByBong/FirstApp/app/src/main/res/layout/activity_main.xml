@@ -34,4 +34,11 @@
         android:text="CUTOM"
         android:id="@+id/button_customListView"
         android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Image Grid"
+        android:id="@+id/button_main_imageGrid"
+        android:layout_gravity="center_horizontal" />
 </LinearLayout>

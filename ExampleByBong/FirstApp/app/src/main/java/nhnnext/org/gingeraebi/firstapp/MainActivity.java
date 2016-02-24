@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button listView1Button;
     private Button listView2Button;
     private Button cutomListVIew;
+    private Button cutomGridVIew;
+
 
     @Override
      protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         cutomListVIew = (Button) findViewById(R.id.button_customListView);
         cutomListVIew.setOnClickListener(this);
+
+        cutomGridVIew = (Button) findViewById(R.id.button_main_imageGrid);
+        cutomGridVIew.setOnClickListener(this);
 
 
     }
@@ -65,6 +70,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             {
                 Log.i("MainActivity", "CustomListView Button Clicked");
                 Intent intent = new Intent(getApplicationContext(),CustomListActivity.class);
+                startActivity(intent);
+                break;
+            }
+
+            case R.id.button_main_imageGrid :
+            {
+                Log.i("MainActivity", "ImageGridView Button Clicked");
+                Intent intent = new Intent(getApplicationContext(), ImageGridActivity.class);
                 startActivity(intent);
                 break;
             }
