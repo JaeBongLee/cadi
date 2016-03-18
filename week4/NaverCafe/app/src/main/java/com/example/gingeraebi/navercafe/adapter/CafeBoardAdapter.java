@@ -8,10 +8,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.gingeraebi.navercafe.vo.Content;
 import com.example.gingeraebi.navercafe.R;
+import com.example.gingeraebi.navercafe.vo.Content;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by GingerAebi on 2016. 3. 5..
@@ -19,9 +19,9 @@ import java.util.ArrayList;
 public class CafeBoardAdapter extends BaseAdapter {
 
     private Context context;
-    private ArrayList<Content> contentArrayList;
+    private List<Content> contentArrayList;
 
-    public CafeBoardAdapter(Context context, ArrayList<Content> contentArrayList) {
+    public CafeBoardAdapter(Context context, List<Content> contentArrayList) {
         this.context = context;
         this.contentArrayList = contentArrayList;
     }
@@ -46,7 +46,7 @@ public class CafeBoardAdapter extends BaseAdapter {
         View row = convertView;
         if (row == null) {
             LayoutInflater layoutInflater = ((Activity)context).getLayoutInflater();
-            row = layoutInflater.inflate(R.layout.cafe_board_info,parent, false);
+            row = layoutInflater.inflate(R.layout.row_list_view,parent, false);
         }
 
         TextView title = (TextView) row.findViewById(R.id.textView_cafeBoardInfo_title);

@@ -2,12 +2,14 @@ package com.example.gingeraebi.navercafe.db;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.gingeraebi.navercafe.vo.Content;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by GingerAebi on 2016. 3. 11..
@@ -38,8 +40,33 @@ public class Dao {
 
     }
 
-    public ArrayList<Content> getContents() {
-        return null;
+    public List<Content> getContents() {
+        db = dbHelper.getReadableDatabase();
+
+        List<Content> contents = new ArrayList<>();
+
+        String title;
+        String name;
+        String time;
+        String viewCount;
+        String content;
+
+        String sql = "SELECT * FROM content";
+        Cursor cursor = db.rawQuery(sql,null);
+
+        while(cursor.moveToNext()) {
+            title = cursor.getString(1);
+            name = cursor.getString(2);
+            time = cursor.getString(3);
+            viewCount = cursor.getString(4);
+            content = cursor.getString(5);
+
+            contents.add(new Content(title,name,time,viewCount,content));
+        }
+
+        cursor.close();
+
+        return contents;
     }
 
 

@@ -19,7 +19,7 @@
             android:name=".activity.ListViewActivity"
             android:label="@string/title_activity_list_view"
             android:theme="@style/AppTheme" />
-        <activity android:name=".activity.WriteContentActivity"></activity>
+        <activity android:name=".activity.WriteContentActivity" />
     </application>
 
 </manifest>
