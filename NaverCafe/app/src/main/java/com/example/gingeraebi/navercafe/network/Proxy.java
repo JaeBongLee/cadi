@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -33,6 +35,18 @@ public class Proxy {
         try {
             List<Content> contents = call.execute().body();
             return contents;
+        } catch (IOException e) {
+            Log.e("Proxy", e.getMessage());
+        }
+
+        return null;
+    }
+
+    public Content saveContent(Content content) {
+        Call<Content> call = service.saveContent(content);
+        try {
+            Content savedContent = call.execute().body();
+            return savedContent;
         } catch (IOException e) {
             Log.e("Proxy", e.getMessage());
         }

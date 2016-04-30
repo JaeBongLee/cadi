@@ -37,6 +37,7 @@ public class ContentListActivity extends AppCompatActivity implements AdapterVie
         }
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
